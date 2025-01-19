@@ -16,16 +16,15 @@ void del(int* arr,int index,int size)
 void display(int* arr,int size)
 {
     for(int i=0;i<size;i++)
-    printf("%d/n",*(arr + i));
+    printf("%d\n",*(arr+i));
 }
 
 void reverse(int* arr,int size)
 {
     for(int i=0;i<size/2;i++)
-    {int temp;
-        temp=*(arr+i);
-        *(arr+(size-i-1))=*(arr+i);
-        *(arr+i)=temp;
+    {int temp=*(arr+i); 
+        *(arr+i)=*(arr+size-i-1);
+        *(arr+size-i-1)=temp;
     }
 }
 
@@ -35,7 +34,7 @@ void sort(int* arr,int size)
     {
         for(int j=0;j<size-i-1;j++)
         {
-            if(*(arr+j)<*(arr+j+1))
+            if(*(arr+j)>*(arr+j+1))
             {int temp=*(arr+j+1);
                 *(arr+j)=*(arr+j+1);
                 *(arr+j)=temp;
